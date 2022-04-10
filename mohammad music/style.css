@@ -1,0 +1,131 @@
+@font-face {
+	font-family: 'VazirFD';
+	src: url('fonts/VazirFD.eot') format('eot'),
+		url('fonts/VazirFD.ttf') format('truetype'),
+		url('fonts/VazirFD.woff') format('woff');
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	direction: rtl;
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	background: #2b2b2b;
+}
+.container {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 300px;
+	height: 100px;
+}
+.container .search {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 80px;
+	height: 80px;
+	background: #fac400;
+	border-radius: 50%;
+	transition: all 1s;
+	z-index: 4;
+	box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+.container .search:hover {
+	cursor: pointer;
+}
+.container .search::before {
+	content: '';
+	position: absolute;
+	margin: auto;
+	top: 22px;
+	right: 0;
+	bottom: 0;
+	left: 22px;
+	width: 12px;
+	height: 2px;
+	background: white;
+	transform: rotate(45deg);
+	transition: all 0.5s;
+}
+.container .search::after {
+	content: '';
+	position: absolute;
+	margin: auto;
+	top: -5px;
+	right: 0;
+	bottom: 0;
+	left: -5px;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	border: 2px solid white;
+	transition: all 0.5s;
+}
+.container input {
+	text-align: right;
+	font-family: 'VazirFD';
+	font-size: 1rem;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	outline: none;
+	border: none;
+	background: #fac400;
+	color: #2b2b2b;
+	padding: 0 20px 0 80px;
+	border-radius: 30px;
+	box-shadow: 0 0 25px 0 #151515, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+	transition: all 1s;
+	opacity: 0;
+	z-index: 5;
+}
+.container input:hover {
+	cursor: pointer;
+}
+.container input:focus {
+	width: 300px;
+	opacity: 1;
+	cursor: text;
+}
+.container input:focus ~ .search {
+	left: -250px;
+	background: #eb7500;
+	z-index: 6;
+}
+.container input:focus ~ .search::before {
+	top: 0;
+	left: 0;
+	width: 25px;
+}
+.container input:focus ~ .search::after {
+	top: 0;
+	left: 0;
+	width: 25px;
+	height: 2px;
+	border: none;
+	background: white;
+	border-radius: 0%;
+	transform: rotate(-45deg);
+}
+.container input::placeholder {
+	color: #2b2b2b;
+	opacity: 0.5;
+}
